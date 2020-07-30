@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>My Flix</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <h1>Documentation</h1>
@@ -12,5 +13,132 @@
       update their personal information, and create a list of their favorite
       movies.
     </p>
+    <h3>
+      The table below describes each endpoint of the myFlix API and how to
+      access it.
+    </h3>
+    <table class="blueTable">
+      <thead>
+        <tr>
+          <th>ENDPOINT URL</th>
+          <th>DESCRIPTION</th>
+          <th>METHOD</th>
+          <th>PARAMETERS</th>
+          <th>REQUEST</th>
+          <th>RESPONSE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>/movies</td>
+          <td>This endpoint returns a list of all movies to the user.</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>JSON object: data about all of the movies.</td>
+        </tr>
+        <tr>
+          <td>movies/:title</td>
+          <td>
+            This endpoint retrieves data on a single movie (Description, genre,
+            director, image URL) by movie title.
+          </td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>JSON object: data about a single movie.</td>
+        </tr>
+        <tr>
+          <td>/genres/:name</td>
+          <td>This endpoint retrieves data on a certain genre by name.</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>JSON object: definition of a specific genre.</td>
+        </tr>
+        <tr>
+          <td>/directors/:name</td>
+          <td>
+            This endpoint provides information about a specific director (Bio,
+            birth year, death year) by name.
+          </td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>JSON object: data about a director.</td>
+        </tr>
+        <tr>
+          <td>/users</td>
+          <td>
+            This endpoint allows a new user to register (Username, password,
+            email, date of birth).
+          </td>
+          <td>POST</td>
+          <td>None</td>
+          <td>
+            JSON object: data about the user to add.
+          </td>
+          <td>
+            JSON object: data about the user that was added, including an ID.
+          </td>
+        </tr>
+        <tr>
+          <td>/users/:username</td>
+          <td>
+            This endpoint allows current users to update their info (Username,
+            password, email, date of birth).
+          </td>
+          <td>PUT</td>
+          <td>None</td>
+          <td>None</td>
+          <td>
+            A text message indicating the user, username, password, email, and
+            date of birth that was updated.
+          </td>
+        </tr>
+        <tr>
+          <td>/users/:username/favorites/:title</td>
+          <td>
+            This endpoint allows a user to add a specific movie to their list of
+            favorites.
+          </td>
+          <td>POST</td>
+          <td>None</td>
+          <td>None</td>
+          <td>
+            JSON object: Movie and ID that were successfully added to their list
+            of favorites.
+          </td>
+        </tr>
+        <tr>
+          <td>/users/:username/favorites/:title</td>
+          <td>
+            This endpoint allows a user to remove a movie from their list of
+            favorites.
+          </td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>None</td>
+          <td>
+            A text message indicating whether the movie was successfully removed
+            from their list of favorites.
+          </td>
+        </tr>
+        <tr>
+          <td>/users/:username</td>
+          <td>
+            This endpoint allows a current user to de-register their
+            information.
+          </td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>None</td>
+          <td>
+            A text message indicating whether the user was successfully
+            deregistered.
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
