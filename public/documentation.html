@@ -38,7 +38,7 @@
           <td>JSON object: Data about all of the movies.</td>
         </tr>
         <tr>
-          <td>movies/[Title]</td>
+          <td>/movies/:Title</td>
           <td>
             This endpoint retrieves data on a single movie (Genre, Director,
             Actors, Image URL) by movie title.
@@ -74,7 +74,7 @@
           </td>
         </tr>
         <tr>
-          <td>/genres/[Name]</td>
+          <td>/movies/genres/:Name</td>
           <td>This endpoint retrieves data on a certain genre by name.</td>
           <td>GET</td>
           <td>None</td>
@@ -90,7 +90,7 @@
           </td>
         </tr>
         <tr>
-          <td>/directors/:name</td>
+          <td>/movies/directors/:Name</td>
           <td>
             This endpoint provides information about a specific director (Bio,
             birth year, death year) by name.
@@ -144,7 +144,7 @@
           </td>
         </tr>
         <tr>
-          <td>/users/:username</td>
+          <td>/users/:Username</td>
           <td>
             This endpoint allows current users to update their info (Username,
             password, email, date of birth).
@@ -174,7 +174,7 @@
           </td>
         </tr>
         <tr>
-          <td>/users/:username/Movies/:MovieID</td>
+          <td>/users/:Username/Movies/:MovieID</td>
           <td>
             This endpoint allows a user to add a specific movie to their list of
             favorites.
@@ -198,7 +198,7 @@
           </td>
         </tr>
         <tr>
-          <td>/users/:username/movies/:MovieID</td>
+          <td>/users/:Username/Movies/:MovieID</td>
           <td>
             This endpoint allows a user to remove a movie from their list of
             favorites.
@@ -223,7 +223,7 @@
           </td>
         </tr>
         <tr>
-          <td>/users/:username</td>
+          <td>/users/:Username</td>
           <td>
             This endpoint allows a current user to de-register their
             information.
