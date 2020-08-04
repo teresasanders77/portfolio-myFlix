@@ -35,26 +35,59 @@
           <td>GET</td>
           <td>None</td>
           <td>None</td>
-          <td>JSON object: data about all of the movies.</td>
+          <td>JSON object: Data about all of the movies.</td>
         </tr>
         <tr>
-          <td>movies/:title</td>
+          <td>movies/[Title]</td>
           <td>
-            This endpoint retrieves data on a single movie (Description, genre,
-            director, image URL) by movie title.
+            This endpoint retrieves data on a single movie (Genre, Director,
+            Actors, Image URL) by movie title.
           </td>
           <td>GET</td>
           <td>None</td>
           <td>None</td>
-          <td>JSON object: data about a single movie.</td>
+          <td>
+            JSON object: Data about a single movie.
+            <br /><br />Example:
+            <p>
+              { <br />"Genre": { <br />&nbsp "Name": "Mystery", <br />&nbsp
+              "Description": "A mystery film is a genre of film that revolves
+              around the solution of a problem or a crime. It focuses on the
+              efforts of the detective, private investigator or amateur sleuth
+              to solve the mysterious circumstances of an issue by means of
+              clues, investigation, and clever deduction." <br />},
+              <br />"Director": { <br />&nbsp "Name": "Alfred Hitchcock",
+              <br />&nbsp "Bio": "An English film director and producer. He is
+              one of the most influential and extensively studied filmmakers in
+              the history of cinema.",<br />
+              &nbsp "Birth": "1899",<br />
+              &nbsp "Death": "1980"<br />
+              },<br />
+              "Actors": [], <br />"_id": "5f244290cb6336e9e2ef0281",
+              <br />"Title": "Vertigo", <br />&nbsp "Description": "A former
+              police detective juggles wrestling with his personal demons and
+              becoming obsessed with a hauntingly beautiful woman.",<br />
+              "ImagePath": "vertigo.jpg",<br />
+              "Featured": false<br />
+              }
+            </p>
+          </td>
         </tr>
         <tr>
-          <td>/genres/:name</td>
+          <td>/genres/[Name]</td>
           <td>This endpoint retrieves data on a certain genre by name.</td>
           <td>GET</td>
           <td>None</td>
           <td>None</td>
-          <td>JSON object: definition of a specific genre.</td>
+          <td>
+            JSON object: Definition of a specific genre.
+            <br /><br />Example:
+            <p>
+              { "Name": "Adventure",<br />&nbsp "Description": "Adventure films
+              typically use their action scenes to display and explore exotic
+              locations in an energetic way." <br />}
+            </p>
+          </td>
         </tr>
         <tr>
           <td>/directors/:name</td>
@@ -65,7 +98,20 @@
           <td>GET</td>
           <td>None</td>
           <td>None</td>
-          <td>JSON object: data about a director.</td>
+          <td>
+            JSON object: Data about a director.
+            <br /><br />Example:
+            <p>
+              { <br />"Name": "Steven Spielberg", <br />&nbsp "Bio": "An
+              American film director, producer, and screenwriter. He is
+              considered one of the founding pioneers of the New Hollywood era
+              and one of the most popular directors and producers in film
+              history. Spielberg started in Hollywood directing television and
+              several minor theatrical releases.",<br />&nbsp "Birth": "1946",
+              <br />&nbsp "Death": "-" <br />
+              }
+            </p>
+          </td>
         </tr>
         <tr>
           <td>/users</td>
@@ -76,10 +122,25 @@
           <td>POST</td>
           <td>None</td>
           <td>
-            JSON object: data about the user to add.
+            JSON object: Data about the user to add.
+            <br /><br />Example:
+            <p>
+              { <br />"Username" : "johnjohn99",<br />
+              "Password" : "johnjohnpassword", <br />"Email" :
+              "johnjohn99@aol.com", <br />"Birthday" : "1955-05-05" <br />}
+            </p>
           </td>
           <td>
-            JSON object: data about the user that was added, including an ID.
+            JSON object: Data about the user that was added, including an ID and
+            any favorites that have been added to the users list.
+            <br /><br />Example:
+            <p>
+              {
+              <br />"Favorites": [], <br />"_id": "5f29a2b080bcd00607219c7a",
+              <br />"Username": "johnjohn99", <br />"Password":
+              "johnjohnpassword", <br />"Email": "johnjohn99@aol.com",
+              <br />"Birthday": "1955-05-05T00:00:00.000Z" <br />}
+            </p>
           </td>
         </tr>
         <tr>
@@ -90,14 +151,30 @@
           </td>
           <td>PUT</td>
           <td>None</td>
-          <td>None</td>
           <td>
-            A text message indicating the user, username, password, email, and
-            date of birth that was updated.
+            JSON Object: Data that is to be updated. <br /><br />Example:
+            <p>
+              {
+              <br />"Username" : "teresasanders77", <br />"Password" :
+              "thisisatest", <br />"Email" : "teresasanders77@gmail.com",
+              <br />"Birthday" : "1989-07-11" <br />}
+            </p>
+          </td>
+          <td>
+            JSON Object: Data (user, username, password, email, and date of
+            birth) that was successfully updated. Example:
+            <p>
+              {
+              <br />"Favorites": [ "5f244052cb6336e9e2ef027d" ], <br />"_id":
+              "5f24448acb6336e9e2ef0282", <br />"Username": "teresasanders77",
+              <br />"Password": "thisisatest", <br />"Email":
+              "teresasanders77@gmail.com", <br />"Birthday":
+              "1989-07-11T00:00:00.000Z" <br />}
+            </p>
           </td>
         </tr>
         <tr>
-          <td>/users/:username/favorites/:title</td>
+          <td>/users/:username/Movies/:MovieID</td>
           <td>
             This endpoint allows a user to add a specific movie to their list of
             favorites.
@@ -106,12 +183,22 @@
           <td>None</td>
           <td>None</td>
           <td>
-            JSON object: Movie and ID that were successfully added to their list
-            of favorites.
+            JSON object: Movie ID that was successfully added to their list of
+            favorites along with the rest of the user information.
+            <br /><br />Example:
+            <p>
+              {
+              <br />"Favorites": [ "5f244052cb6336e9e2ef027d",
+              "5f24413acb6336e9e2ef027f", "5f243a07cb6336e9e2ef0277" ],
+              <br />"_id": "5f244566cb6336e9e2ef0285", <br />"Username":
+              "janedoe01", <br />"Password": "janedoesdog", <br />"Email":
+              "janedoe01@gmail.com", <br />"Birthday":
+              "1999-09-19T00:00:00.000Z" <br />}
+            </p>
           </td>
         </tr>
         <tr>
-          <td>/users/:username/favorites/:title</td>
+          <td>/users/:username/movies/:MovieID</td>
           <td>
             This endpoint allows a user to remove a movie from their list of
             favorites.
@@ -120,8 +207,19 @@
           <td>None</td>
           <td>None</td>
           <td>
-            A text message indicating whether the movie was successfully removed
-            from their list of favorites.
+            JSON Object: Updated list of favorites showing the successful
+            removal of the specific movie, as well as the rest of the
+            information of the user.
+            <br /><br />Example:
+            <p>
+              {
+              <br />"Favorites": [ "5f244052cb6336e9e2ef027d",
+              "5f243a07cb6336e9e2ef0277" ], <br />"_id":
+              "5f244566cb6336e9e2ef0285", <br />"Username": "janedoe01",
+              <br />"Password": "janedoesdog", <br />"Email":
+              "janedoe01@gmail.com", <br />"Birthday":
+              "1999-09-19T00:00:00.000Z" <br />}
+            </p>
           </td>
         </tr>
         <tr>
@@ -136,6 +234,10 @@
           <td>
             A text message indicating whether the user was successfully
             deregistered.
+            <br /><br />Example:
+            <p>
+              testuser1003 was deleted.
+            </p>
           </td>
         </tr>
       </tbody>
