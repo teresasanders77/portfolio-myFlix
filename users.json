@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5f24448acb6336e9e2ef0282"},"Username":"teresasanders77","Password":"thisisatest","Email":"teresasanders77@gmail.com","Birthday":{"$date":"1989-07-10T00:00:00.000Z"},"Favorites":{"$oid":"5f244052cb6336e9e2ef027d"}}
+{"_id":{"$oid":"5f2444d1cb6336e9e2ef0283"},"Username":"testing1234","Password":"testing1234","Email":"testing1234@yahoo.com","Birthday":{"$date":"2001-01-01T00:00:00.000Z"},"Favorites":[{"$oid":"5f243a07cb6336e9e2ef0277"}]}
+{"_id":{"$oid":"5f244503cb6336e9e2ef0284"},"Username":"usernumber3","Password":"passwordnumber3","Email":"usernumber3@yahoo.com","Birthday":{"$date":"2020-07-30T00:00:00.000Z"},"Favorites":[{"$oid":"5f243a07cb6336e9e2ef0277"}]}
+{"_id":{"$oid":"5f244566cb6336e9e2ef0285"},"Username":"janedoe01","Password":"janedoesdog","Email":"janedoe01@gmail.com","Birthday":{"$date":"1999-09-19T00:00:00.000Z"},"Favorites":[{"$oid":"5f244052cb6336e9e2ef027d"},{"$oid":"5f24413acb6336e9e2ef027f"}]}
