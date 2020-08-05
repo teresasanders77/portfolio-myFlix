@@ -1,17 +1,19 @@
 const express = require("express"),
-  morgan = require("morgan"),
   bodyParser = require("body-parser"),
+  morgan = require("morgan"),
   uuid = require("uuid"),
   mongoose = require("mongoose");
-Models = require("./models.js");
-app = express();
-passport = require("passport");
-require("./passport");
 cors = require("cors");
+Models = require("./models.js");
 
+const passport = require("passport");
+require("./passport");
+
+const { check, validationResult } = require("express-validator");
+
+const app = express();
 const Movies = Models.Movie;
 const Users = Models.User;
-const { check, validationResult } = require("express-validator");
 
 //mongoose.connect("mongodb://localhost:27017/myFlixDB", {
 mongoose.connect(process.env.CONNECTION_URI, {
@@ -20,19 +22,23 @@ mongoose.connect(process.env.CONNECTION_URI, {
   useFindAndModify: false,
 });
 
-//uses Morgan to log requests
-app.use(morgan("common"));
-
 //Using bodyParser
 app.use(bodyParser.json());
 
-//Using cors
-app.use(cors());
+//uses Morgan to log requests
+app.use(morgan("common"));
 
 //Imports auth.js file
 let auth = require("./auth")(app);
 
+//Using cors
+app.use(cors());
+
 //GET requests
+app.get("/", (req, res) => {
+  res.send("<h1>" + "<b>Welcome to myFlix !<b>" + "</h1>");
+});
+
 //Returns a list of ALL movies to the user
 app.get(
   "/movies",
@@ -247,7 +253,7 @@ app.use(function (err, req, res, next) {
 });
 
 //listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("Listening on Port " + PORT);
+const port = process.env.PORT || 8080;
+app.listen(port, "0.0.0.0", () => {
+  console.log("Listening on Port " + port);
 });
