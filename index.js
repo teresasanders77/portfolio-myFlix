@@ -31,6 +31,8 @@ app.use(morgan("common"));
 //Imports auth.js file
 let auth = require("./auth")(app);
 
+let allowedOrigins = ["*"];
+
 //Using cors
 app.use(cors());
 
