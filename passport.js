@@ -28,6 +28,11 @@ passport.use(
           });
         }
 
+        if (!user.validatePassword(password)) {
+          console.log("incorrect password");
+          return callback(null, flase, { message: "Incorrect password." });
+        }
+
         console.log("finished");
         return callback(null, user);
       });
