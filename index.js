@@ -5,7 +5,6 @@ const express = require("express"),
   mongoose = require("mongoose");
 cors = require("cors");
 Models = require("./models.js");
-
 const passport = require("passport");
 require("./passport");
 
@@ -42,7 +41,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/documentation.html", (req, res) => {
-  res.sendFile("documentation.html");
+  res.sendFile("/public/documentation.html");
 });
 
 //Returns a list of ALL movies to the user
