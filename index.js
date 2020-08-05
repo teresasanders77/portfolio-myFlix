@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
   res.send("<h1>" + "<b>Welcome to myFlix !<b>" + "</h1>");
 });
 
+app.get("/documentation.html", (req, res) => {
+  res.sendFile("documentation.html");
+});
+
 //Returns a list of ALL movies to the user
 app.get(
   "/movies",
