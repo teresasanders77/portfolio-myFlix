@@ -41,7 +41,7 @@ app.use(
 let auth = require("./auth")(app);
 
 //mongoose.connect("mongodb://localhost:27017/myFlixDB", {
-mongoose.connect("process.env.CONNECTION_URI", {
+mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
