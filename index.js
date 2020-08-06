@@ -47,10 +47,6 @@ mongoose.connect(process.env.CONNECTION_URI, {
 });
 
 //GET requests
-app.get("/", (req, res) => {
-  res.send("<h1>" + "<b>Welcome to myFlix !<b>" + "</h1>");
-});
-
 app.get("/documentation.html", (req, res) => {
   res.sendFile("documentation.html");
 });
