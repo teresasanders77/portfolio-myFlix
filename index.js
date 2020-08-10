@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 let allowedOrigins = [
   "https://my-flix-77.herokuapp.com/",
   "http://localhost:8080",
+  "http://localhost:1234"
 ];
 
 app.use(
