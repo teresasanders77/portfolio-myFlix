@@ -16,7 +16,7 @@ app.use(express.static("public"));
 app.use(morgan("common"));
 app.use(bodyParser.json());
 
-let allowedOrigins = ['http://localhost:1234', 'http://testsite.com'];
+let allowedOrigins = ['http://localhost:1234', '*'];
 
 app.use(
   cors({
