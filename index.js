@@ -1,17 +1,23 @@
+const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Models = require("./models.js");
-const Movies = Models.Movie;
-const Users = Models.User;
-const { check, validationResult } = require("express-validator");
-uuid = require("uuid");
 const cors = require("cors");
+const { check, validationResult } = require("express-validator");
 const passport = require("passport");
 require("./passport");
 
+const Movies = Models.Movie;
+const Users = Models.User;
+
 //var allowedOrigins = ['http://localhost:1234', '*'];
+
+app.use(cors());
+
+//Imports auth.js file
+var auth = require("./auth")(app);
 
 //mongoose.connect("mongodb://localhost:27017/myFlixDB", {
 mongoose.connect(process.env.CONNECTION_URI, {
@@ -19,18 +25,14 @@ mongoose.connect(process.env.CONNECTION_URI, {
   useUnifiedTopology: true,
 });
 
-const express = require("express");
 app.use(bodyParser.json());
+app.use(express.static("public"));
 app.use(morgan("common"));
-app.use(express.static(path.resolve('dist')));
-app.use(cors());
+
 app.use(function (err, req, res, next) {
   console.error(err.stack);
-  res.status(500).send('Something is not working')
+  res.status(500).send('Something broke!')
 });
-
-//Imports auth.js file
-var auth = require("./auth")(app);
 
 //GET requests
 app.get("/documentation.html", (req, res) => {
@@ -240,7 +242,7 @@ app.delete(
 );
 
 //listen for requests
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", () => {
-  console.log("Listening on Port" + port);
+  console.log("Listening on Port 3000");
 });
