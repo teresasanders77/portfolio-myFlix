@@ -1,4 +1,16 @@
 const express = require("express");
+app.use(bodyParser.json());
+app.use(morgan("common"));
+app.use(express.static(path.resolve('dist')));
+app.use(cors());
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something is not working')
+});
+
+//Imports auth.js file
+var auth = require("./auth")(app);
+
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
@@ -12,16 +24,7 @@ const cors = require("cors");
 const passport = require("passport");
 require("./passport");
 
-app.use(express.static("public"));
-app.use(morgan("common"));
-app.use(bodyParser.json());
-
-var allowedOrigins = ['http://localhost:1234', '*'];
-
-app.use(cors());
-
-//Imports auth.js file
-let auth = require("./auth")(app);
+//var allowedOrigins = ['http://localhost:1234', '*'];
 
 //mongoose.connect("mongodb://localhost:27017/myFlixDB", {
 mongoose.connect(process.env.CONNECTION_URI, {
