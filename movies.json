@@ -1,12 +1,228 @@
-{"_id":{"$oid":"5f234a38b954c9dcdfb6400d"},"Title":"The Godfather","Description":"The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Francis Ford Coppola","Bio":"An American retired film director, producer, and screenwriter. He was a central figure in the New Hollywood filmmaking movement of the 1960s and 1970s, and is widely considered to be one of the greatest filmmakers of all time.","Birth":"1939","Death":"-"},"ImagePath":"godfather.jpg","Feature":true}
-{"_id":{"$oid":"5f243a07cb6336e9e2ef0277"},"Title":"The Shawshank Redemption","Description":"Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Frank Darabont","Bio":"A Hungarian-American film director, screenwriter and producer who has been nominated for three Academy Awards and a Golden Globe Award. In his early career, he was primarily a screenwriter for horror films such as A Nightmare on Elm Street 3: Dream Warriors, The Blob and The Fly II.","Birth":"1959","Death":"-"},"ImagePath":"shawshank.jpg","Featured":true}
-{"_id":{"$oid":"5f243dd5cb6336e9e2ef027a"},"Title":"Raging Bull","Description":"The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Martin Scorsese","Bio":"An American film director, producer, screenwriter, and actor. One of the major figures of the New Hollywood era, he is widely regarded as one of the most significant and influential directors in film history.","Birth":"1942","Death":"-"},"ImagePath":"raging.jpg","Featured":false}
-{"_id":{"$oid":"5f243f4acb6336e9e2ef027b"},"Title":"Casablanca","Description":" A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Michael Curitz","Bio":"A Hungarian-born American film director, recognized as one of the most prolific directors in history. He directed classic films from the silent era and numerous others during Hollywood's Golden Age, when the studio system was prevalent.","Birth":"1886","Death":"1962"},"ImagePath":"casablanca.jpg","Featured":true}
-{"_id":{"$oid":"5f243fcfcb6336e9e2ef027c"},"Title":"Citizen Kane","Description":"Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance; 'Rosebud'.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Orson Welles","Bio":"An American actor, director, writer and producer who is remembered for his innovative work in radio, theatre and film. He is considered one of the greatest filmmakers of all time.","Birth":"1915","Death":"1985"},"ImagePath":"citizen.jpg","Featured":false}
-{"_id":{"$oid":"5f244052cb6336e9e2ef027d"},"Title":"Gone With the Wind","Description":"A manipulative woman and a roguish man conduct a turbulent romance during the American Civil War and Reconstruction periods.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Victor Fleming","Bio":"An American film director, cinematographer, and producer. His most popular films were The Wizard of Oz and Gone with the Wind, for which he won an Academy Award for Best Director.","Birth":"1889","Death":"1949"},"ImagePath":"gone.jpg","Featured":true}
-{"_id":{"$oid":"5f2440bbcb6336e9e2ef027e"},"Title":"The Wizard of Oz","Description":"Dorothy Gale is swept away from a farm in Kansas to a magical land of Oz in a tornado and embarks on a quest with her new friends to see the Wizard who can help her return home to Kansas and help her friends as well.","Genre":{"Name":"Adventure","Description":"Adventure films typically use their action scenes to display and explore exotic locations in an energetic way."},"Director":{"Name":"Victor Fleming","Bio":"An American film director, cinematographer, and producer. His most popular films were The Wizard of Oz and Gone with the Wind, for which he won an Academy Award for Best Director.","Birth":"1889","Death":"1949"},"ImagePath":"wizard.jpg","Featured":false}
-{"_id":{"$oid":"5f24413acb6336e9e2ef027f"},"Title":"One Flew Over the Cuckoo's Nest","Description":"A criminal pleads insanity and is admitted to a mental institution, where he rebels against the oppressive nurse and rallies up the scared patients.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Milos Forman","Bio":"A Czech-American film director, screenwriter, actor, and professor who rose to fame in his native Czechoslovakia before emigrating to the United States in 1968. Forman was an important figure in the Czechoslovak New Wave.","Birth":"1932","Death":"2018"},"ImagePath":"cuckoo.jpg","Featured":false}
-{"_id":{"$oid":"5f2441accb6336e9e2ef0280"},"Title":"Lawrence of Arabia","Description":"The story of T.E. Lawrence, the English officer who successfully united and led the diverse, often warring, Arab tribes during World War I in order to fight the Turks.","Genre":{"Name":"Adventure","Description":"Adventure films typically use their action scenes to display and explore exotic locations in an energetic way."},"Director":{"Name":"David Lean","Bio":"An English film director, producer, screenwriter and editor. Widely considered one of the most influential directors of all time, Lean directed the large-scale epics The Bridge on the River Kwai, Lawrence of Arabia, Doctor Zhivago and A Passage to India.","Birth":"1908","Death":"1991"},"ImagePath":"lawrence.jpg","Featured":false}
-{"_id":{"$oid":"5f244290cb6336e9e2ef0281"},"Title":"Vertigo","Description":"A former police detective juggles wrestling with his personal demons and becoming obsessed with a hauntingly beautiful woman.","Genre":{"Name":"Mystery","Description":"A mystery film is a genre of film that revolves around the solution of a problem or a crime. It focuses on the efforts of the detective, private investigator or amateur sleuth to solve the mysterious circumstances of an issue by means of clues, investigation, and clever deduction."},"Director":{"Name":"Alfred Hitchcock","Bio":"An English film director and producer. He is one of the most influential and extensively studied filmmakers in the history of cinema.","Birth":"1899","Death":"1980"},"ImagePath":"vertigo.jpg","Featured":false}
-{"_id":{"$oid":"5f249956b88f3e6806fd85ca"},"Title":"Schindler's List","Description":"In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Steven Spielberg","Bio":"An American film director, producer, and screenwriter. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases.","Birth":"1946","Death":"-"},"ImagePath":"schindler.jpg","Featured":true}
-{"_id":{"$oid":"5f2499f8b88f3e6806fd85cb"},"Title":"Saving Private Ryan","Description":"Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.","Genre":{"Name":"Drama","Description":"Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."},"Director":{"Name":"Steven Spielberg","Bio":"An American film director, producer, and screenwriter. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases.","Birth":"1946","Death":"-"},"ImagePath":"saving.jpg","Featured":false}
+{
+  "_id": {
+    "$oid": "5f234a38b954c9dcdfb6400d"
+  },
+  "Title": "The Godfather",
+  "Description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Francis Ford Coppola",
+    "Bio": "An American retired film director, producer, and screenwriter. He was a central figure in the New Hollywood filmmaking movement of the 1960s and 1970s, and is widely considered to be one of the greatest filmmakers of all time.",
+    "Birth": "1939",
+    "Death": "-"
+  },
+  "ImagePath": "client/src/img/godfather.jpg",
+  "Feature": true
+}
+{
+  "_id": {
+    "$oid": "5f243a07cb6336e9e2ef0277"
+  },
+  "Title": "The Shawshank Redemption",
+  "Description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Frank Darabont",
+    "Bio": "A Hungarian-American film director, screenwriter and producer who has been nominated for three Academy Awards and a Golden Globe Award. In his early career, he was primarily a screenwriter for horror films such as A Nightmare on Elm Street 3: Dream Warriors, The Blob and The Fly II.",
+    "Birth": "1959",
+    "Death": "-"
+  },
+  "ImagePath": "client/src/img/shawshank.jpg",
+  "Featured": true
+}
+{
+  "_id": {
+    "$oid": "5f243dd5cb6336e9e2ef027a"
+  },
+  "Title": "Raging Bull",
+  "Description": "The life of boxer Jake LaMotta, whose violence and temper that led him to the top in the ring destroyed his life outside of it.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Martin Scorsese",
+    "Bio": "An American film director, producer, screenwriter, and actor. One of the major figures of the New Hollywood era, he is widely regarded as one of the most significant and influential directors in film history.",
+    "Birth": "1942",
+    "Death": "-"
+  },
+  "ImagePath": "client/src/img/raging.jpg",
+  "Featured": false
+}
+{
+  "_id": {
+    "$oid": "5f243f4acb6336e9e2ef027b"
+  },
+  "Title": "Casablanca",
+  "Description": " A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Michael Curitz",
+    "Bio": "A Hungarian-born American film director, recognized as one of the most prolific directors in history. He directed classic films from the silent era and numerous others during Hollywood's Golden Age, when the studio system was prevalent.",
+    "Birth": "1886",
+    "Death": "1962"
+  },
+  "ImagePath": "client/src/img/casablanca.jpg",
+  "Featured": true
+}
+{
+  "_id": {
+    "$oid": "5f243fcfcb6336e9e2ef027c"
+  },
+  "Title": "Citizen Kane",
+  "Description": "Following the death of publishing tycoon Charles Foster Kane, reporters scramble to uncover the meaning of his final utterance; 'Rosebud'.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Orson Welles",
+    "Bio": "An American actor, director, writer and producer who is remembered for his innovative work in radio, theatre and film. He is considered one of the greatest filmmakers of all time.",
+    "Birth": "1915",
+    "Death": "1985"
+  },
+  "ImagePath": "client/src/img/citizen.jpg",
+  "Featured": false
+}
+{
+  "_id": {
+    "$oid": "5f244052cb6336e9e2ef027d"
+  },
+  "Title": "Gone With the Wind",
+  "Description": "A manipulative woman and a roguish man conduct a turbulent romance during the American Civil War and Reconstruction periods.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Victor Fleming",
+    "Bio": "An American film director, cinematographer, and producer. His most popular films were The Wizard of Oz and Gone with the Wind, for which he won an Academy Award for Best Director.",
+    "Birth": "1889",
+    "Death": "1949"
+  },
+  "ImagePath": "client/src/img/gone.jpg",
+  "Featured": true
+}
+{
+  "_id": {
+    "$oid": "5f2440bbcb6336e9e2ef027e"
+  },
+  "Title": "The Wizard of Oz",
+  "Description": "Dorothy Gale is swept away from a farm in Kansas to a magical land of Oz in a tornado and embarks on a quest with her new friends to see the Wizard who can help her return home to Kansas and help her friends as well.",
+  "Genre": {
+    "Name": "Adventure",
+    "Description": "Adventure films typically use their action scenes to display and explore exotic locations in an energetic way."
+  },
+  "Director": {
+    "Name": "Victor Fleming",
+    "Bio": "An American film director, cinematographer, and producer. His most popular films were The Wizard of Oz and Gone with the Wind, for which he won an Academy Award for Best Director.",
+    "Birth": "1889",
+    "Death": "1949"
+  },
+  "ImagePath": "client/src/img/wizard.jpg",
+  "Featured": false
+}
+{
+  "_id": {
+    "$oid": "5f24413acb6336e9e2ef027f"
+  },
+  "Title": "One Flew Over the Cuckoo's Nest",
+  "Description": "A criminal pleads insanity and is admitted to a mental institution, where he rebels against the oppressive nurse and rallies up the scared patients.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Milos Forman",
+    "Bio": "A Czech-American film director, screenwriter, actor, and professor who rose to fame in his native Czechoslovakia before emigrating to the United States in 1968. Forman was an important figure in the Czechoslovak New Wave.",
+    "Birth": "1932",
+    "Death": "2018"
+  },
+  "ImagePath": "client/src/img/cuckoo.jpg",
+  "Featured": false
+}
+{
+  "_id": {
+    "$oid": "5f2441accb6336e9e2ef0280"
+  },
+  "Title": "Lawrence of Arabia",
+  "Description": "The story of T.E. Lawrence, the English officer who successfully united and led the diverse, often warring, Arab tribes during World War I in order to fight the Turks.",
+  "Genre": {
+    "Name": "Adventure",
+    "Description": "Adventure films typically use their action scenes to display and explore exotic locations in an energetic way."
+  },
+  "Director": {
+    "Name": "David Lean",
+    "Bio": "An English film director, producer, screenwriter and editor. Widely considered one of the most influential directors of all time, Lean directed the large-scale epics The Bridge on the River Kwai, Lawrence of Arabia, Doctor Zhivago and A Passage to India.",
+    "Birth": "1908",
+    "Death": "1991"
+  },
+  "ImagePath": "client/src/img/lawrence.jpg",
+  "Featured": false
+}
+{
+  "_id": {
+    "$oid": "5f244290cb6336e9e2ef0281"
+  },
+  "Title": "Vertigo",
+  "Description": "A former police detective juggles wrestling with his personal demons and becoming obsessed with a hauntingly beautiful woman.",
+  "Genre": {
+    "Name": "Mystery",
+    "Description": "A mystery film is a genre of film that revolves around the solution of a problem or a crime. It focuses on the efforts of the detective, private investigator or amateur sleuth to solve the mysterious circumstances of an issue by means of clues, investigation, and clever deduction."
+  },
+  "Director": {
+    "Name": "Alfred Hitchcock",
+    "Bio": "An English film director and producer. He is one of the most influential and extensively studied filmmakers in the history of cinema.",
+    "Birth": "1899",
+    "Death": "1980"
+  },
+  "ImagePath": "client/src/img/vertigo.jpg",
+  "Featured": false
+}
+{
+  "_id": {
+    "$oid": "5f249956b88f3e6806fd85ca"
+  },
+  "Title": "Schindler's List",
+  "Description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Steven Spielberg",
+    "Bio": "An American film director, producer, and screenwriter. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases.",
+    "Birth": "1946",
+    "Death": "-"
+  },
+  "ImagePath": "client/src/img/schindler.jpg",
+  "Featured": true
+}
+{
+  "_id": {
+    "$oid": "5f2499f8b88f3e6806fd85cb"
+  },
+  "Title": "Saving Private Ryan",
+  "Description": "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "Serious presentations or stories with settings or life situations that portray realistic characters in conflict with either themselves, others, or forces of nature."
+  },
+  "Director": {
+    "Name": "Steven Spielberg",
+    "Bio": "An American film director, producer, and screenwriter. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases.",
+    "Birth": "1946",
+    "Death": "-"
+  },
+  "ImagePath": "client/src/img/saving.jpg",
+  "Featured": false
+}
