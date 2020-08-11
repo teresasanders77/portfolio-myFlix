@@ -1,16 +1,3 @@
-const express = require("express");
-app.use(bodyParser.json());
-app.use(morgan("common"));
-app.use(express.static(path.resolve('dist')));
-app.use(cors());
-app.use(function (err, req, res, next) {
-  console.error(err.stack);
-  res.status(500).send('Something is not working')
-});
-
-//Imports auth.js file
-var auth = require("./auth")(app);
-
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
@@ -31,6 +18,19 @@ mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+const express = require("express");
+app.use(bodyParser.json());
+app.use(morgan("common"));
+app.use(express.static(path.resolve('dist')));
+app.use(cors());
+app.use(function (err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something is not working')
+});
+
+//Imports auth.js file
+var auth = require("./auth")(app);
 
 //GET requests
 app.get("/documentation.html", (req, res) => {
