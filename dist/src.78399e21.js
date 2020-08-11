@@ -30120,11 +30120,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MovieView = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -30148,8 +30146,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var MovieView = /*#__PURE__*/function (_Component) {
-  _inherits(MovieView, _Component);
+var MovieView = /*#__PURE__*/function (_React$Component) {
+  _inherits(MovieView, _React$Component);
 
   var _super = _createSuper(MovieView);
 
@@ -30166,9 +30164,7 @@ var MovieView = /*#__PURE__*/function (_Component) {
   _createClass(MovieView, [{
     key: "render",
     value: function render() {
-      var _this$props = this.props,
-          movie = _this$props.movie,
-          previous = _this$props.previous;
+      var movie = this.props.movie;
       if (!movie) return null;
       return _react.default.createElement("div", {
         className: "movie-view"
@@ -30199,17 +30195,12 @@ var MovieView = /*#__PURE__*/function (_Component) {
         className: "label"
       }, "Director: "), _react.default.createElement("span", {
         className: "value"
-      }, movie.Director.Name)), _react.default.createElement("button", {
-        className: "back-button",
-        onClick: function onClick() {
-          return previous(movie);
-        }
-      }, "Back"));
+      }, movie.Director.Name)));
     }
   }]);
 
   return MovieView;
-}(_react.Component);
+}(_react.default.Component);
 
 exports.MovieView = MovieView;
 },{"react":"../node_modules/react/index.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
@@ -30304,10 +30295,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement("div", {
         className: "main-view"
       }, selectedMovie ? _react.default.createElement(_movieView.MovieView, {
-        movie: selectedMovie,
-        previous: function previous(movie) {
-          return _this3.onMovieClick(!movie);
-        }
+        movie: selectedMovie
       }) : movies.map(function (movie) {
         return _react.default.createElement(_movieCard.MovieCard, {
           key: movie._id,
@@ -30485,7 +30473,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59174" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61193" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

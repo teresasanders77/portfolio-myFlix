@@ -19,6 +19,7 @@ app.use(cors());
 //Imports auth.js file
 var auth = require("./auth")(app);
 
+//mongoose.connect("mongodb://localhost:27017/myFlixDB", {
 mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class MovieView extends Component {
+export class MovieView extends React.Component {
 
   constructor() {
     super();
@@ -9,7 +9,7 @@ export class MovieView extends Component {
   }
 
   render() {
-    const { movie, previous } = this.props;
+    const { movie } = this.props;
 
     if (!movie) return null;
 
@@ -33,9 +33,8 @@ export class MovieView extends Component {
           <span className="label">Director: </span>
           <span className="value">{movie.Director.Name}</span>
         </div>
-        <button className="back-button" onClick={() =>
-          previous(movie)}>Back</button>
       </div>
+
     );
   }
 }
