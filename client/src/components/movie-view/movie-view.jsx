@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+
+import './movie-view.scss';
 
 export class MovieView extends Component {
 
@@ -14,28 +17,43 @@ export class MovieView extends Component {
     if (!movie) return null;
 
     return (
-      <div className="movie-view">
-        <img className="movie-poster" src={movie.ImagePath} />
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
+      <Container>
+        <div className="movie-view">
+          <div class="d-flex justify-content-center">
+            <img className="movie-poster" src={movie.ImagePath} width={300} height={550} mode='fit' />
+          </div>
+          <Row>
+            <div className="movie-title">
+              <strong className="label">Title: </strong>
+              <span className="value">{movie.Title}</span>
+            </div>
+          </Row>
+          <Row>
+            <div className="movie-description">
+              <strong className="label">Description: </strong>
+              <span className="value">{movie.Description}</span>
+            </div>
+          </Row>
+          <Row>
+            <div className="movie-genre">
+              <strong className="label">Genre: </strong>
+              <span className="value">{movie.Genre.Name}</span>
+            </div>
+          </Row>
+          <Row>
+            <div className="movie-director">
+              <strong className="label">Director: </strong>
+              <span className="value">{movie.Director.Name}</span>
+            </div>
+          </Row>
+          <div class="d-flex justify-content-center">
+            <Row>
+              <Button className="back-button" onClick={() =>
+                previous(movie)} variant="light">Back</Button>
+            </Row>
+          </div>
         </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
-        </div>
-
-        <div className="movie-genre">
-          <span className="label">Genre: </span>
-          <span className="value">{movie.Genre.Name}</span>
-        </div>
-        <div className="movie-director">
-          <span className="label">Director: </span>
-          <span className="value">{movie.Director.Name}</span>
-        </div>
-        <button className="back-button" onClick={() =>
-          previous(movie)}>Back</button>
-      </div>
+      </Container >
     );
   }
 }

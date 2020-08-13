@@ -1,5 +1,12 @@
-.my-flix {
-  color: steelblue;
+h6 {
+  color: black;
+}
+.movie-view {
+  flex: auto;
+}
+body {
+  background-color: #0e0e3d;
+  color: white;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */
