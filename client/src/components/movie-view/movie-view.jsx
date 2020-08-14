@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import './movie-view.scss';
 
@@ -57,3 +58,13 @@ export class MovieView extends Component {
     );
   }
 }
+
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    Title: PropTypes.string,
+    Description: PropTypes.string,
+    Genre: PropTypes.string,
+    Director: PropTypes.string,
+  }),
+  previous: PropTypes.string,
+};
