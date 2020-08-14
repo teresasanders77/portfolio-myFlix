@@ -46180,7 +46180,7 @@ function LoginView(props) {
     });
   };
 
-  return _react.default.createElement(_Container.default, null, _react.default.createElement(_Form.default, null, _react.default.createElement("h4", null, "Login"), _react.default.createElement(_Form.default.Group, {
+  return _react.default.createElement(_Container.default, null, _react.default.createElement("div", null, _react.default.createElement("h4", null, "Login"), _react.default.createElement(_Form.default.Group, {
     className: "login"
   }, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
     md: "6"
@@ -46519,17 +46519,34 @@ var MainView = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(MainView, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
+    key: "getMovies",
+    value: function getMovies(token) {
       var _this2 = this;
 
-      _axios.default.get('https://my-flix-77.herokuapp.com/movies').then(function (response) {
+      _axios.default.get('https://my-flix-77.herokuapp.com/movies', {
+        headers: {
+          Authorization: "Bearer ".concat(token)
+        }
+      }).then(function (response) {
+        // Assign the result to the state
         _this2.setState({
           movies: response.data
         });
       }).catch(function (error) {
         console.log(error);
       });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {//axios.get('https://my-flix-77.herokuapp.com/movies')
+      //.then((response) => {
+      // this.setState({
+      //  movies: response.data
+      // });
+      // })
+      // .catch(function (error) {
+      //   console.log(error);
+      // });
     }
   }, {
     key: "onMovieClick",
@@ -46550,27 +46567,9 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       this.getMovies(authData.token);
     }
   }, {
-    key: "getMovies",
-    value: function getMovies(token) {
-      var _this3 = this;
-
-      _axios.default.get('https://my-flix-77.herokuapp.com/movies', {
-        headers: {
-          Authorization: "Bearer ".concat(token)
-        }
-      }).then(function (response) {
-        // Assign the result to the state
-        _this3.setState({
-          movies: response.data
-        });
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var _this$state = this.state,
           movies = _this$state.movies,
@@ -46578,11 +46577,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
           user = _this$state.user;
       if (!user) return [_react.default.createElement(_loginView.LoginView, {
         onLoggedIn: function onLoggedIn(user) {
-          return _this4.onLoggedIn(user);
+          return _this3.onLoggedIn(user);
         }
       }), _react.default.createElement(_registrationView.RegistrationView, {
         onLoggedIn: function onLoggedIn(user) {
-          return _this4.onLoggedIn(user);
+          return _this3.onLoggedIn(user);
         }
       })];
       if (!movies) return _react.default.createElement("div", {
@@ -46598,14 +46597,14 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, selectedMovie ? _react.default.createElement(_movieView.MovieView, {
         movie: selectedMovie,
         previous: function previous(movie) {
-          return _this4.onMovieClick(!movie);
+          return _this3.onMovieClick(!movie);
         }
       }) : movies.map(function (movie) {
         return _react.default.createElement(_movieCard.MovieCard, {
           key: movie._id,
           movie: movie,
           onClick: function onClick(movie) {
-            return _this4.onMovieClick(movie);
+            return _this3.onMovieClick(movie);
           }
         });
       }))));

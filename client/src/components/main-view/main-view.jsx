@@ -20,9 +20,12 @@ export class MainView extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios.get('https://my-flix-77.herokuapp.com/movies')
-      .then((response) => {
+  getMovies(token) {
+    axios.get('https://my-flix-77.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then(response => {
+        // Assign the result to the state
         this.setState({
           movies: response.data
         });
@@ -30,6 +33,18 @@ export class MainView extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
+  }
+
+  componentDidMount() {
+    //axios.get('https://my-flix-77.herokuapp.com/movies')
+    //.then((response) => {
+    // this.setState({
+    //  movies: response.data
+    // });
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   }
 
   onMovieClick(movie) {
@@ -47,21 +62,6 @@ export class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
-  }
-
-  getMovies(token) {
-    axios.get('https://my-flix-77.herokuapp.com/movies', {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(response => {
-        // Assign the result to the state
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   }
 
   render() {

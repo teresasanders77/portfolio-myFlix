@@ -31,7 +31,7 @@ export function LoginView(props) {
 
   return (
     <Container>
-      <Form>
+      <div>
         <h4>Login</h4>
         <Form.Group className='login'>
           <Row>
@@ -71,7 +71,7 @@ export function LoginView(props) {
             </footer>
           </div>
         </Form.Group>
-      </Form>
+      </div>
     </Container >
   );
 }
