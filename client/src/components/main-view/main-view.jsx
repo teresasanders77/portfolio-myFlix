@@ -16,8 +16,21 @@ export class MainView extends React.Component {
     this.state = {
       movies: null,
       selectedMovie: null,
-      user: null
+      user: null,
+      register: false,
     };
+  }
+
+  componentDidMount() {
+    //axios.get('https://my-flix-77.herokuapp.com/movies')
+    //.then((response) => {
+    // this.setState({
+    //  movies: response.data
+    // });
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   }
 
   getMovies(token) {
@@ -35,24 +48,6 @@ export class MainView extends React.Component {
       });
   }
 
-  componentDidMount() {
-    //axios.get('https://my-flix-77.herokuapp.com/movies')
-    //.then((response) => {
-    // this.setState({
-    //  movies: response.data
-    // });
-    // })
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
-  }
-
-  onMovieClick(movie) {
-    this.setState({
-      selectedMovie: movie
-    });
-  }
-
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -62,6 +57,12 @@ export class MainView extends React.Component {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
+  }
+
+  onMovieClick(movie) {
+    this.setState({
+      selectedMovie: movie
+    });
   }
 
   render() {

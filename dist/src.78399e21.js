@@ -46169,9 +46169,11 @@ function LoginView(props) {
     e.preventDefault();
     /* Send a request to the server for authentication */
 
-    _axios.default.post('https://my-flix-77.herokuapp.com/login', {
-      Username: username,
-      Password: password
+    _axios.default.post('https://my-flix-77.herokuapp.com/login', null, {
+      params: {
+        Username: username,
+        Password: password
+      }
     }).then(function (response) {
       var data = response.data;
       props.onLoggedIn(data);
@@ -46513,12 +46515,25 @@ var MainView = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       movies: null,
       selectedMovie: null,
-      user: null
+      user: null,
+      register: false
     };
     return _this;
   }
 
   _createClass(MainView, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {//axios.get('https://my-flix-77.herokuapp.com/movies')
+      //.then((response) => {
+      // this.setState({
+      //  movies: response.data
+      // });
+      // })
+      // .catch(function (error) {
+      //   console.log(error);
+      // });
+    }
+  }, {
     key: "getMovies",
     value: function getMovies(token) {
       var _this2 = this;
@@ -46537,25 +46552,6 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {//axios.get('https://my-flix-77.herokuapp.com/movies')
-      //.then((response) => {
-      // this.setState({
-      //  movies: response.data
-      // });
-      // })
-      // .catch(function (error) {
-      //   console.log(error);
-      // });
-    }
-  }, {
-    key: "onMovieClick",
-    value: function onMovieClick(movie) {
-      this.setState({
-        selectedMovie: movie
-      });
-    }
-  }, {
     key: "onLoggedIn",
     value: function onLoggedIn(authData) {
       console.log(authData);
@@ -46565,6 +46561,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       localStorage.setItem('token', authData.token);
       localStorage.setItem('user', authData.user.Username);
       this.getMovies(authData.token);
+    }
+  }, {
+    key: "onMovieClick",
+    value: function onMovieClick(movie) {
+      this.setState({
+        selectedMovie: movie
+      });
     }
   }, {
     key: "render",
@@ -46709,7 +46712,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52577" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51240" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
