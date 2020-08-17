@@ -46171,8 +46171,8 @@ function LoginView(props) {
 
     _axios.default.post('https://my-flix-77.herokuapp.com/login', null, {
       params: {
-        username: username,
-        password: password
+        Username: username,
+        Password: password
       }
     }).then(function (response) {
       var data = response.data;
@@ -46712,7 +46712,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55159" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56067" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
