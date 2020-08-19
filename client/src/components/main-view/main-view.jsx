@@ -10,7 +10,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Navbar, Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 import './main-view.scss';
 
@@ -72,6 +73,7 @@ export class MainView extends React.Component {
     window.open('/', '_self');
   }
 
+
   render() {
     const { movies, selectedMovie, user } = this.state;
 
@@ -87,38 +89,48 @@ export class MainView extends React.Component {
 
     return (
       <Router>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand as={Link} to="/">myFlix
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/user">Profile</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
         <div>
           <Button size="sm" onClick={() => this.onLoggedOut()}>
             <b>Log Out</b>
           </Button>
         </div>
-        <Container>
-          <div className="main-view">
-            <Route exact path="/" render={() =>
-              movies.map(m => <MovieCard key={m._id} movie={m} />)
-            }
-            />
-            <Route exact path="/users" component={ProfileView} />
-            <Route path="/register" render={() => <RegistrationView />} />
-            <Route path="/login" render={() => <LoginView />} />
-            <Route path="/movies/:movieId" render={({ match }) => <MovieView movie={movies.find(m => m._id === match.params.movieId)} />} />
-            <Route path="/movies/director/:name" render={({ match }) => {
-              if (!movies) return <div className="main-view" />;
-              return (
-                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
-              );
-            }}
-            />
-            <Route path="/movies/genres/:name" render={({ match }) => {
-              if (!movies) return <div className="main-view" />;
-              return <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
-            }}
-            />
-            <Route exact path="/user" render={() => <ProfileView movies={movies} />}
-            />
-            <Route path="/user/update" render={() => <UpdateProfile />} />
-          </div>
-        </Container>
+        <div className="main-view">
+          <Route exact path="/" render={() => {
+            if (!user) return (
+              <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+            );
+            return movies.map(m => <MovieCard key={m._id} movie={m} />)
+          }}
+          />
+          <Route path="/users" component={ProfileView} />
+          <Route path="/register" render={() => <RegistrationView />} />
+          <Route path="/login" render={() => <LoginView />} />
+          <Route path="/movies/:movieId" render={({ match }) => <MovieView movie={movies.find(m => m._id === match.params.movieId)} />} />
+          <Route path="/directors/:name" render={({ match }) => {
+            if (!movies) return <div className="main-view" />;
+            return <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} />
+          }
+          } />
+          <Route path="/genres/:name" render={({ match }) => {
+            if (!movies) return <div className="main-view" />;
+            return <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
+          }}
+          />
+          <Route exact path="/user" render={() => <ProfileView movies={movies} />}
+          />
+          <Route path="/user/update" render={() => <UpdateProfile />} />
+        </div>
       </Router>
     );
   }

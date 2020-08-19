@@ -1,6 +1,12 @@
 .card-text {
   color: black;
 }
+.genre-view {
+  color: black;
+}
+.director-view {
+  color: black;
+}
 .movie-view {
   flex: auto;
 }

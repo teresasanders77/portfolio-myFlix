@@ -152,6 +152,21 @@ app.post(
   }
 );
 
+// Get a user by username 
+app.get("/users/:Username",
+  passport.authenticate('jwt', { session: false }),
+  function (req, res) {
+    Users.findOne({ Username: req.params.Username })
+      .then(function (user) {
+        res.json(user);
+      })
+      .catch(function (err) {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      });
+  }
+);
+
 //Update a user's info, by username
 app.put("/users/:Username", (req, res) => {
   let hashedPassword = Users.hashPassword(req.body.Password);
