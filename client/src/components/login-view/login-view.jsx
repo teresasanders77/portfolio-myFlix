@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
@@ -7,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
+
 
 import './login-view.scss';
 
@@ -57,23 +59,21 @@ export function LoginView(props) {
               />
             </Col>
           </Row>
-          <Row>
-            <Col className='Button'>
-              <Button
-                type='button'
-                color="blue"
-                rounded="true"
-                onClick={handleSubmit}>Login</Button>
-            </Col>
-          </Row>
-          <div className="d-flex flex-column">
-            <footer className="footer">
-              <div>
-                <a href="">Not registered yet?</a>
-              </div>
-            </footer>
-          </div>
         </Form.Group>
+        <Row>
+          <Col className='Button'>
+            <Button
+              type='button'
+              color="blue"
+              rounded="true"
+              onClick={handleSubmit}>Login</Button>
+          </Col>
+        </Row>
+        <Router>
+          <Link to={`/register`}>
+            <Button variant="link" className="registerButton" type="submit">Not registered yet?</Button>
+          </Link>
+        </Router>
       </div>
     </Container >
   );
