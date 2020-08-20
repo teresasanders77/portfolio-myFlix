@@ -22,7 +22,7 @@ export class MainView extends React.Component {
     this.state = {
       movies: [],
       selectedMovie: null,
-      user: null,
+      users: null,
       register: false,
     };
   }
@@ -113,7 +113,8 @@ export class MainView extends React.Component {
             return movies.map(m => <MovieCard key={m._id} movie={m} />)
           }}
           />
-          <Route path="/users" component={ProfileView} />
+          <Route exact path="/user" render={() => <ProfileView movies={movies} />}
+          />
           <Route path="/register" render={() => <RegistrationView />} />
           <Route path="/login" render={() => <LoginView />} />
           <Route path="/movies/:movieId" render={({ match }) => <MovieView movie={movies.find(m => m._id === match.params.movieId)} />} />
@@ -126,8 +127,6 @@ export class MainView extends React.Component {
             if (!movies) return <div className="main-view" />;
             return <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} />
           }}
-          />
-          <Route exact path="/user" render={() => <ProfileView movies={movies} />}
           />
           <Route path="/user/update" render={() => <UpdateProfile />} />
         </div>
