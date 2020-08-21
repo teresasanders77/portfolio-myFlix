@@ -24,7 +24,7 @@ export class ProfileView extends React.Component {
       email: null,
       birthday: null,
       userData: null,
-      favoriteMovies: [],
+      favorites: [],
       usernameForm: null,
       passwordForm: null,
       emailForm: null,
@@ -55,7 +55,7 @@ export class ProfileView extends React.Component {
           password: response.data.Password,
           email: response.data.Email,
           birthday: response.data.Birthday,
-          favoriteMovies: response.data.FavoriteMovies,
+          favorites: response.data.Favorites,
         });
       })
       .catch(function (error) {
@@ -85,12 +85,12 @@ export class ProfileView extends React.Component {
       });
   }
 
-  deleteMovie(event, favoriteMovie) {
+  deleteMovie(event, favorites) {
     event.preventDefault();
-    console.log(favoriteMovie);
+    console.log(favorites);
     let userEndpoint = 'https://my-flix-77.herokuapp.com/users/';
     let usernameLocal = localStorage.getItem('user');
-    let url = `${userEndpoint}${usernameLocal}/FavoriteMovies/${favoriteMovie}`;
+    let url = `${userEndpoint}${usernameLocal}/movies/${favorites}`;
 
     axios.delete(url, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -144,31 +144,31 @@ export class ProfileView extends React.Component {
 
     form.classList.toggle('show-form');
     if (form.classList.contains('show-form')) {
-      toggleButton.innerHTML = 'Chnage data &uarr;';
+      toggleButton.innerHTML = 'Change data &uarr;';
     } else {
       toggleButton.innerHTML = 'Change data &darr;';
     }
   }
 
   render() {
-    const { userData, username, email, birthday, favoriteMovies } = this.state;
+    const { userData, username, email, birthday, favorites } = this.state;
     const { movies } = this.props;
 
-    console.log('fv', favoriteMovies);
+    console.log('fv', favorites);
     console.log('log m', movies);
 
     let filteredFavMovie = [];
     let filterMoviesByFav = movies.map(m => {
-      if (!favoriteMovies) return null;
-      for (let i = 0; i < favoriteMovies.length; i++) {
-        const favMov = favoriteMovies[i];
+      if (!favorites) return null;
+      for (let i = 0; i < favorites.length; i++) {
+        const favMov = favorites[i];
         if (m._id === favMov) {
           filteredFavMovie.push(m);
         }
       }
     });
     console.log(
-      'TCL: ProfileVIew -> render -> filteredFavMovie',
+      'TCL: ProfileView -> render -> filteredFavMovie',
       filteredFavMovie)
 
     if (!userData) return null;
@@ -201,22 +201,17 @@ export class ProfileView extends React.Component {
         </div>
 
         {/* favoriteMovies */}
-        <div className='favorite-movies'>
-          <h4 id='fav' className='label'>Favorite Movies:
-          </h4>
+        <div className='favorites'>
+          <h4 id='fav' className='label'>
+            Favorite Movies:
+            </h4>
 
           {movies && filteredFavMovie ? (
             <div className='value'>
-              {filteredFavMovie.map(favoriteMovie => (
-                <div key={favoriteMovie._id}>
-                  {favoriteMovie.Title}
-                  <span on Click={event =>
-                    this.deleteMovie(event, favoriteMovie._id)
-                  }
-                  >
-                    {' '}
-                  Delete
-                </span>
+              {filteredFavMovie.map(favorites => (
+                <div key={favorites._id}>
+                  {favorites.Title}
+                  <button onClick={() => this.deleteMovie(event, favorites._id)}>Delete</button>
                 </div>
               ))}
             </div>
