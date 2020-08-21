@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Swit } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 
 
 import './login-view.scss';
-import { RegistrationView } from '../registration-view/registration-view';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -36,42 +35,47 @@ export function LoginView(props) {
   };
 
   return (
-    <Container className='logContainer'>
-      <form>
-        <Form.Group controlId='formBasicUsername'>
-          <Form.Label>Username:</Form.Label>
-          <Form.Control
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className='Control'
-            type='text'
-            placeholder='Enter Username'
-          />
+    <Container>
+      <div>
+        <h4>Login</h4>
+        <Form.Group className='login'>
+          <Row>
+            <Col md="6">
+              <Form.Label className='Label'>Username:</Form.Label>
+              <Form.Control
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className='Control'
+                type='text'
+                placeholder='Enter Username'
+              />
+              <Form.Label className='Label'>Password:</Form.Label>
+              <Form.Control
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className='Control2'
+                type='password'
+                placeholder='Enter Password'
+              />
+            </Col>
+          </Row>
         </Form.Group>
-
-        <Form.Group controlId='formBasicPassword'>
-          <Form.Label>Password:</Form.Label>
-          <Form.Control
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className='Control'
-            type='password'
-            placeholder='Enter Password'
-          />
-        </Form.Group>
-        <Button
-          type='button'
-          color="blue"
-          rounded="true"
-          onClick={handleSubmit}>Login</Button>
-
-        <Link to={`/register`}>
-          <Button variant="link" className="registerButton" type="submit">
-            Not registered yet?
-           </Button>
-        </Link>
-      </form>
-    </Container>
+        <Row>
+          <Col className='Button'>
+            <Button
+              type='button'
+              color="blue"
+              rounded="true"
+              onClick={handleSubmit}>Login</Button>
+          </Col>
+        </Row>
+        <Router>
+          <Link to={`/register`}>
+            <Button variant="link" className="registerButton" type="submit">Not registered yet?</Button>
+          </Link>
+        </Router>
+      </div>
+    </Container >
   );
 }
 
@@ -79,4 +83,3 @@ LoginView.propTypes = {
   username: PropTypes.string,
   password: PropTypes.string,
 };
-
