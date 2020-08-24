@@ -279,7 +279,7 @@ export class ProfileView extends React.Component {
                   placeholder='example: 1999/01/01'
                 />
               </Form.Group>
-              <div class="button-box col-lg-12">
+              <div className="button-box col-lg-12">
                 <Button className='change-btn'
                   variant='dark'
                   type='button'

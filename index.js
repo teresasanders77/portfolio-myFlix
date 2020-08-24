@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
@@ -28,6 +29,12 @@ mongoose.connect(process.env.CONNECTION_URI, {
 
 app.use(bodyParser.json());
 app.use(express.static("public"));
+app.use("/client", express.static(path.join(__dirname, "client", "dist")));
+app.get("/client/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
+
+
 app.use(morgan("common"));
 
 app.use(function (err, req, res, next) {
