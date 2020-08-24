@@ -11,18 +11,20 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card style={{ width: '16rem' }}>
-        <Card.Img variant="top" src={movie.ImagePath} />
-        <Card.Body>
-          <div className="card-text">
-            <Card.Title>{movie.Title}</Card.Title>
-            <Card.Text>{movie.Description}</Card.Text>
-          </div>
-          <Link to={`/movies/${movie._id}`}>
-            <Button variant="link">Open</Button>
-          </Link>
-        </Card.Body>
-      </Card>
+      <div className="movie-cards">
+        <Card style={{ width: '20rem' }}>
+          <Card.Img variant="top" src={movie.ImagePath} />
+          <Card.Body>
+            <div className="card-text">
+              <Card.Title>{movie.Title}</Card.Title>
+              <Card.Text>{movie.Description}</Card.Text>
+            </div>
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant="link">Open</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+      </div>
     );
   }
 }

@@ -3,11 +3,12 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import Container from 'react-bootstrap/Container';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Button, Card, Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import './profile-view.scss';
 import { connect } from 'mongoose';
+
 
 const mapStateToProps = state => {
   const { movies } = state;
@@ -174,117 +175,129 @@ export class ProfileView extends React.Component {
     if (!userData) return null;
 
     return (
-      <div className="profile-view">
+      <Container fluid="md">
+        <Row>
+          <Col>
+            <div className="info">
+              {/* username */}
+              <div className='username'>
+                <h4 className='label'>Name:</h4>
+                <div className='value'>{username}</div>
+              </div>
+              <br></br>
 
-        {/* username */}
-        <div className='username'>
-          <h4 className='label'>Name:</h4>
-          <div className='value'>{username}</div>
-        </div>
+              {/* password */}
+              <div className='password'>
+                <h4 className='label'>Password:</h4>
+                <div className='value'>********</div>
+              </div>
+              <br></br>
 
-        {/* password */}
-        <div className='password'>
-          <h4 className='label'>Password:</h4>
-          <div className='value'>********</div>
-        </div>
+              {/* birthday */}
+              <div className='birthday'>
+                <h4 className='label'>Birthday:</h4>
+                <div className='value'>{birthday}</div>
+              </div>
+              <br></br>
 
-        {/* birthday */}
-        <div className='birthday'>
-          <h4 className='label'>Birthday:</h4>
-          <div className='value'>{birthday}</div>
-        </div>
+              {/* email */}
+              <div className='email'>
+                <h4 className='label'>Email:</h4>
+                <div className='value'>{email}</div>
+              </div>
+              <br></br>
 
-        {/* email */}
-        <div className='email'>
-          <h4 className='label'>Email:</h4>
-          <div className='value'>{email}</div>
-        </div>
-
-        {/* favoriteMovies */}
-        <div className='favorites'>
-          <h4 id='fav' className='label'>
-            Favorite Movies:
+              {/* favoriteMovies */}
+              <div className='favorites'>
+                <h4 id='fav' className='label'>
+                  Favorite Movies:
             </h4>
 
-          {movies && filteredFavMovie ? (
-            <div className='value'>
-              {filteredFavMovie.map(favorites => (
-                <div key={favorites._id}>
-                  {favorites.Title}
-                  <button onClick={() => this.deleteMovie(event, favorites._id)}>Delete</button>
-                </div>
-              ))}
+                {movies && filteredFavMovie ? (
+                  <div className='value'>
+                    {filteredFavMovie.map(favorites => (
+                      <div key={favorites._id}>
+                        {favorites.Title}
+                        <button onClick={() => this.deleteMovie(event, favorites._id)}>Delete</button>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                    <div className='value'>Your Favorite Movie List is empty!</div>
+                  )}
+              </div>
+
+              <Link to={'/'}>
+                <Button className='view-btn' variant='dark' type='button'>
+                  Go to Movies
+          </Button>
+              </Link>
             </div>
-          ) : (
-              <div className='value'>Your Favorite Movie List is empty!</div>
-            )}
-        </div>
+          </Col>
 
-        <Link to={'/'}>
-          <Button className='view-btn' variant='dark' type='button'>
-            Go to Movies
-          </Button>
-        </Link>
+          <Col>
+            <Form className='changeDataForm'>
+              <h2>Update Information</h2>
+              <hr></hr>
+              <Form.Group controlId='formBasicUsername'>
+                <Form.Label>Your Username</Form.Label>
+                <Form.Control
+                  type='text'
+                  name='usernameForm'
+                  onChange={event => this.handleChange(event)}
+                  placeholder='Enter Username'
+                />
+              </Form.Group>
 
-        <Form className='changeDataForm'>
-          <h2>Change Data</h2>
-          <hr></hr>
-          <Form.Group controlId='formBasicUsername'>
-            <Form.Label>Your Username</Form.Label>
-            <Form.Control
-              type='text'
-              name='usernameForm'
-              onChange={event => this.handleChange(event)}
-              placeholder='Enter Username'
-            />
-          </Form.Group>
+              <Form.Group controlId='formBasicPassword'>
+                <Form.Label>Your Password</Form.Label>
+                <Form.Control
+                  type='text'
+                  name='passwordForm'
+                  onChange={event => this.handleChange(event)}
+                  placeholder='Enter Password'
+                />
+              </Form.Group>
 
-          <Form.Group controlId='formBasicPassword'>
-            <Form.Label>Your Password</Form.Label>
-            <Form.Control
-              type='text'
-              name='passwordForm'
-              onChange={event => this.handleChange(event)}
-              placeholder='Enter Password'
-            />
-          </Form.Group>
-
-          <Form.Group controlId='formBasicEmail'>
-            <Form.Label>Your Email</Form.Label>
-            <Form.Control
-              type='text'
-              name='emailForm'
-              onChange={event => this.handleChange(event)}
-              placeholder='Enter Email'
-            />
-          </Form.Group>
+              <Form.Group controlId='formBasicEmail'>
+                <Form.Label>Your Email</Form.Label>
+                <Form.Control
+                  type='text'
+                  name='emailForm'
+                  onChange={event => this.handleChange(event)}
+                  placeholder='Enter Email'
+                />
+              </Form.Group>
 
 
-          <Form.Group controlId='formBasicBirthday'>
-            <Form.Label>Your Birthday</Form.Label>
-            <Form.Control
-              type='text'
-              name='birthdayForm'
-              onChange={event => this.handleChange(event)}
-              placeholder='example: 1999/01/01'
-            />
-          </Form.Group>
-
-          <Button className='change-btn'
-            variant='dark'
-            type='button'
-            onClick={event => this.handleSubmit(event)}>
-            Update Profile
+              <Form.Group controlId='formBasicBirthday'>
+                <Form.Label>Your Birthday</Form.Label>
+                <Form.Control
+                  type='text'
+                  name='birthdayForm'
+                  onChange={event => this.handleChange(event)}
+                  placeholder='example: 1999/01/01'
+                />
+              </Form.Group>
+              <div class="button-box col-lg-12">
+                <Button className='change-btn'
+                  variant='dark'
+                  type='button'
+                  onClick={event => this.handleSubmit(event)}>
+                  Update Profile
           </Button>
 
-          <Button className='view-btn'
-            variant='danter'
-            type='button'
-            onClick={event => this.deleteUser(event)}>
-            Delete Account
+                <Button className='view-btn'
+                  variant='danger'
+                  type='button'
+                  onClick={event => this.deleteUser(event)}>
+                  Delete Account
           </Button>
-        </Form>
-      </div>
+              </div>
+            </Form>
+          </Col>
+        </Row >
+      </Container >
     );
   }
 }

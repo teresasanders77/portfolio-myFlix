@@ -19,17 +19,25 @@ export class MovieView extends React.Component {
     if (!movie) return null;
 
     return (
-      <div>
+      <div className="movie-card">
         <Card style={{ width: '20rem' }}>
           <Card.Img variant="top" src={movie.ImagePath} />
           <Card.Body>
             <Card.Title>{movie.Title}</Card.Title>
-            <Card.Text>Description: {movie.Description}</Card.Text>
+            <Card.Text><strong>Description: </strong>{movie.Description}</Card.Text>
             <Link to={`/genres/${movie.Genre.Name}`}>
-              <Button variant="link">Genre</Button>
+              <Button
+                type='button'
+                color="blue"
+                rounded="true">Genre
+          </Button>
             </Link>
             <Link to={`/directors/${movie.Director.Name}`}>
-              <Button variant="link">Director</Button>
+              <Button
+                type='button'
+                color="blue"
+                rounded="true">Director
+          </Button>
             </Link>
             <Link to={`/`}>
               <Button variant="link">Back</Button>
