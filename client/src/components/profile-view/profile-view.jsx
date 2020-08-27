@@ -218,7 +218,12 @@ export class ProfileView extends React.Component {
                     {filteredFavMovie.map(favorites => (
                       <div key={favorites._id}>
                         {favorites.Title}
-                        <button onClick={() => this.deleteMovie(event, favorites._id)}>Delete</button>
+                        <Button className="view-btn"
+                          variant='danger'
+                          type='button'
+                          onClick={() => this.deleteMovie(event, favorites._id)}>
+                          Remove
+                        </Button>
                       </div>
                     ))}
                   </div>
@@ -226,10 +231,9 @@ export class ProfileView extends React.Component {
                     <div className='value'>Your Favorite Movie List is empty!</div>
                   )}
               </div>
-
               <Link to={'/'}>
                 <Button className='view-btn' variant='dark' type='button'>
-                  Go to Movies
+                  Add to Favorites
           </Button>
               </Link>
             </div>

@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Swit } from "react-router-dom";
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 
 
 import './login-view.scss';
-import { RegistrationView } from '../registration-view/registration-view';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -27,11 +23,13 @@ export function LoginView(props) {
       }
     })
       .then(response => {
+        e.preventDefault();
         const data = response.data;
         props.onLoggedIn(data);
       })
       .catch(e => {
         console.log('no such user')
+        alert('Incorrect name or password');
       });
   };
 
@@ -60,13 +58,13 @@ export function LoginView(props) {
           />
         </Form.Group>
         <Button
-          type='button'
+          type='submit'
           color="blue"
           rounded="true"
           onClick={handleSubmit}>Login</Button>
 
         <Link to={`/register`}>
-          <Button variant="link" className="registerButton" type="submit">
+          <Button variant="link" className="registerButton" type="link">
             Not registered yet?
            </Button>
         </Link>

@@ -1,16 +1,37 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
 import './movie-view.scss';
+import axios from 'axios';
 
 export class MovieView extends React.Component {
   constructor() {
     super();
 
     this.state = {};
+  }
+
+  addToFavorites(e) {
+    const { movie } = this.props;
+    e.preventDefault();
+    axios.post(
+      `https://my-flix-77.herokuapp.com/users/${localStorage.getItem('user')}/Movies/${movie._id}`,
+      { username: localStorage.getItem('user') },
+      {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      })
+      .then(res => {
+        alert(`${movie.Title} was successfully added to your favorites`);
+      })
+      .then(res => {
+        document.location.reload(true);
+      })
+      .catch(error => {
+        alert(`${movie.Title} not added to your favorites` + error)
+      });
   }
 
   render() {
@@ -21,6 +42,11 @@ export class MovieView extends React.Component {
     return (
       <div className="movie-card">
         <Card style={{ width: '20rem' }}>
+          <Button className="add-favorite-btn mt-4" onClick={e => this.addToFavorites(e)}>
+            <span>
+              Add to favorites
+            </span>
+          </Button>
           <Card.Img variant="top" src={movie.ImagePath} />
           <Card.Body>
             <Card.Title>{movie.Title}</Card.Title>

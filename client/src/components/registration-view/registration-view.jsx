@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
-import { Alert } from 'react-bootstrap';
 
 import './registration-view.scss';
 import axios from 'axios';
@@ -28,6 +25,7 @@ export function RegistrationView(props) {
     })
       .then(response => {
         const data = response.data;
+        alert('Success!');
         console.log(data);
         window.open('/client', '_self');//will open in the same tab
       })

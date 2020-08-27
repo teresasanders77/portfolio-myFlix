@@ -1,17 +1,51 @@
+.card-text {
+  color: black;
+}
+
+.movie-cards {
+  display: flex;
+  justify-content: center;
+}
 .regContainer {
   width: 30%;
 }
 .logContainer {
   width: 30%;
 }
-.card-text {
-  color: black;
+.movie-card {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 13px 12px 12px 10px;
 }
 .genre-view {
   color: black;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+}
 .director-view {
   color: black;
+}
+.changeDataForm {
+  width: 50%;
+}
+
+h2 {
+  text-align: center;
+}
+
+.button-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.info {
+  text-align: center;
 }
 .movie-view {
   flex: auto;

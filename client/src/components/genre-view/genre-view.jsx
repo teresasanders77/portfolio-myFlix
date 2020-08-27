@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -15,7 +14,7 @@ export class GenreView extends React.Component {
   }
 
   render() {
-    const { movies, genre } = this.props;
+    const { movie, genre } = this.props;
 
     if (!genre) return null;
 
