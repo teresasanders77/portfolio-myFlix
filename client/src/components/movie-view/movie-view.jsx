@@ -74,13 +74,3 @@ export class MovieView extends React.Component {
     );
   }
 }
-
-MovieView.propTypes = {
-  movie: PropTypes.shape({
-    Title: PropTypes.string,
-    Description: PropTypes.string,
-    Genre: PropTypes.string,
-    Director: PropTypes.string,
-  }),
-  previous: PropTypes.string,
-};

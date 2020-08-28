@@ -81,7 +81,7 @@ class MainView extends React.Component {
     let { user } = this.state;
 
     return (
-      <Router basename='/client'>
+      <Router basename="/client">
         <Navbar bg="light" expand="lg">
           <Navbar.Brand as={Link} to="/">myFlix
           </Navbar.Brand>
