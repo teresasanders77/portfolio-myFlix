@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // #0
 import { setMovies } from '../../actions/actions';
@@ -11,16 +11,14 @@ import { setMovies } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
-import { Container, Button, Navbar, Nav } from 'react-bootstrap';
+import { Button, Navbar, Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 import './main-view.scss';
-import { fromPairs } from 'lodash';
 
 class MainView extends React.Component {
   constructor() {
@@ -70,7 +68,7 @@ class MainView extends React.Component {
     this.setState({
       user: null,
     });
-    window.open('/', '_self');
+    window.open('/client', '_self');
   }
 
 

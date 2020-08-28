@@ -4,11 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import { Button, Card, Form } from 'react-bootstrap';
-import PropTypes from 'prop-types';
+import { Button, Form } from 'react-bootstrap';
 import './profile-view.scss';
-import { connect } from 'mongoose';
-
 
 const mapStateToProps = state => {
   const { movies } = state;
