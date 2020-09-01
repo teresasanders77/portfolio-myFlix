@@ -1,7 +1,8 @@
-h1, p {
+h1, h3, p {
   text-align: center; 
 }
 
-.blueTable {
-  border-style: solid;
+table, th, td {
+  border: 1px solid black;
+  text-align: center; 
 }
