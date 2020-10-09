@@ -22,6 +22,19 @@ app.use(cors());
 //Imports auth.js file
 var auth = require("./auth")(app);
 
+/**
+* @requires path
+* @requires express
+* @requires morgan
+* @requires body-parser
+* @requires uuid
+* @requires mongoose
+* @requires Models from './models.js'
+* @requires cors
+* @requires epress-validator
+* @requires passport
+*/
+
 mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -47,7 +60,15 @@ app.get("/documentation.html", (req, res) => {
   res.sendFile("documentation.html");
 });
 
-//Returns a list of ALL movies to the user
+/**
+ * This endpoint returns a list of all movies 
+ * Method: GET
+ * Endpoint URL: /movies
+ * Example response: 
+ * @param {string} Title
+ * @param {string} Description
+ */
+
 app.get(
   "/movies",
   passport.authenticate("jwt", { session: false }),
@@ -63,7 +84,20 @@ app.get(
   }
 );
 
-//Returns data about a single movie by title to the user
+/**
+ * This endpoint returns data about a single movie by title to the user
+ * Method: GET
+ * Endpoint URL: /movies/:Title
+ * Example response: 
+ * @param {object} Genre: Name, Description
+ * @param {object} Director: Name, Bio, Birth, Death
+ * @param {array} Actors
+ * @param {string} _id
+ * @param {string} Title
+ * @param {string} Description
+ * @param {string} ImagePath
+ * @param {boolean} Featured
+ */
 app.get(
   "/movies/:Title",
   passport.authenticate("jwt", { session: false }),
@@ -79,7 +113,14 @@ app.get(
   }
 );
 
-//Returns data about a genre by name/title
+/**
+ * This endpoint returns data about a genre by name/title
+ * Method: GET
+ * Endpoint URL: /movies/genres/:Name
+ * Example response: 
+ * @param {string} Name
+ * @param {string} Description
+ */
 app.get(
   "/movies/genres/:Name",
   passport.authenticate("jwt", { session: false }),
@@ -95,7 +136,16 @@ app.get(
   }
 );
 
-//Returns data about a director by name
+/**
+ * This endpoint returns data about a director by name
+ * Method: GET
+ * Endpoint URL: /movies/directors/:Name
+ * Example response: 
+ * @param {string} Name
+ * @param {string} Bio
+ * @param {date} Birth
+ * @param {date} Death
+ */
 app.get(
   "/movies/directors/:Name",
   passport.authenticate("jwt", { session: false }),
@@ -111,7 +161,18 @@ app.get(
   }
 );
 
-//Add a user
+/**
+ * This endpoint allows a new user to register (Username, password, email, date of birth).
+ * Method: POST
+ * Endpoint URL: /users
+ * Example response: 
+ * @param {array} Favorites
+ * @param {string} _id
+ * @param {string} Username
+ * @param {string} Password
+ * @param {string} Email
+ * @param {date} Birthday
+ */
 app.post(
   "/users",
   //Validation logic here for request
@@ -158,23 +219,18 @@ app.post(
       });
   }
 );
-
-// Get a user by username 
-app.get("/users/:Username",
-  passport.authenticate('jwt', { session: false }),
-  function (req, res) {
-    Users.findOne({ Username: req.params.Username })
-      .then(function (user) {
-        res.json(user);
-      })
-      .catch(function (err) {
-        console.error(err);
-        res.status(500).send('Error: ' + err);
-      });
-  }
-);
-
-//Update a user's info, by username
+/**
+ * This endpoint allows current users to update their info (Username, password, email, date of birth).
+ * Method: PUT
+ * Endpoint URL: /users/:Username
+ * Example response: 
+ * @param {array} Favorites
+ * @param {string} _id
+ * @param {string} Username
+ * @param {string} Password
+ * @param {string} Email
+ * @param {date} Birthday
+ */
 app.put("/users/:Username", (req, res) => {
   let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOneAndUpdate(
@@ -199,7 +255,18 @@ app.put("/users/:Username", (req, res) => {
   );
 });
 
-//Add a movie to a user's list of favorites
+/**
+ * This endpoint allows a user to add a specific movie to their list of favorites.
+ * Method: POST
+ * Endpoint URL: /users/:Username/Movies/:MovieID
+ * Example response: 
+ * @param {array} Favorites
+ * @param {string} _id
+ * @param {string} Username
+ * @param {string} Password
+ * @param {string} Email
+ * @param {date} Birthday
+ */
 app.post(
   "/users/:Username/Movies/:MovieID",
   passport.authenticate("jwt", { session: false }),
@@ -222,7 +289,18 @@ app.post(
   }
 );
 
-//Allows users to remove a movie from their list of favorites
+/**
+ * This endpoint allows a user to remove a movie from their list of favorites.
+ * Method: DELETE
+ * Endpoint URL: /users/:Username/Movies/:MovieID
+ * Example response: 
+ * @param {array} Favorites
+ * @param {string} _id
+ * @param {string} Username
+ * @param {string} Password
+ * @param {string} Email
+ * @param {date} Birthday
+ */
 app.delete(
   "/users/:Username/Movies/:MovieID",
   passport.authenticate("jwt", { session: false }),
@@ -245,6 +323,13 @@ app.delete(
   }
 );
 
+/**
+ * This endpoint allows a current user to de-register their information.
+ * Method: DELETE
+ * Endpoint URL: /users/:Username
+ * Example response: 
+ * User was deleted 
+ */
 //Delete a user by username
 app.delete(
   "/users/:Username",
