@@ -8,6 +8,13 @@ import { Link } from 'react-router-dom';
 import './registration-view.scss';
 import axios from 'axios';
 
+/**
+ * Registers new user 
+ * @function RegistrationView
+ * @param {props} username, password, email, birthday 
+ * @returns {Container} - registration form
+ */
+
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

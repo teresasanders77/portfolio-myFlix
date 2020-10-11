@@ -14,6 +14,12 @@ export class MovieView extends React.Component {
     this.state = {};
   }
 
+  /**
+* Adds movie to list of favorites 
+* @function addToFavorites
+* @param {event} 
+* @returns {alert} - added/not added to favorites 
+*/
   addToFavorites(e) {
     const { movie } = this.props;
     e.preventDefault();

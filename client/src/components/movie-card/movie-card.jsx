@@ -5,6 +5,12 @@ import { Card, Button } from 'react-bootstrap';
 import './movie-card.scss';
 import { Link } from "react-router-dom";
 
+/**
+* MovieCard view
+* @function MovieCard
+* @param {*} movie
+* @returns {Card} - movie image, title, description
+*/
 export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;

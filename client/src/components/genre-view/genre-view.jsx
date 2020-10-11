@@ -6,6 +6,13 @@ import Container from 'react-bootstrap/Container';
 
 import './genre-view.scss';
 
+/**
+ * Genre information view
+ * @function GenreView
+ * @param {*} props- movie, genre
+ * @returns {Container}- Description, examples 
+ */
+
 export class GenreView extends React.Component {
   constructor() {
     super();

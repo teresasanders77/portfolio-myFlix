@@ -6,6 +6,13 @@ import Container from 'react-bootstrap/Container';
 
 import './director-view.scss';
 
+/**
+ * Director information view
+ * @function DirectorView
+ * @param {*} props- movies, director 
+ * @returns {DirectorView}
+ */
+
 export class DirectorView extends React.Component {
   constructor() {
     super();
