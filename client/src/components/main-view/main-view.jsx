@@ -39,6 +39,12 @@ class MainView extends React.Component {
     }
   }
 
+  /**
+ * Main view
+ * @function getMovies
+ * @param {number} token
+ * @returns {array} list of movies
+ */
   getMovies(token) {
     axios.get('https://my-flix-77.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}` },
@@ -52,6 +58,12 @@ class MainView extends React.Component {
       });
   }
 
+  /**
+ * Once correct login info is submitted 
+ * @function onLoggedIn
+ * @param {object} authData
+ * @returns {localStorage}
+ */
   onLoggedIn(authData) {
     this.setState({
       user: authData.user.Username
