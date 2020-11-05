@@ -17,6 +17,7 @@ import { DirectorView } from '../director-view/director-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { Button, Navbar, Nav } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import logo from './logo.png';
 
 import './main-view.scss';
 
@@ -92,22 +93,23 @@ class MainView extends React.Component {
 
     return (
       <Router basename='/client'>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand as={Link} to="/">myFlix
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/user">Profile</Nav.Link>
-            </Nav>
-            <Nav className="ml-auto">
-              <Button size="sm" onClick={() => this.onLoggedOut()}>
-                <b>Log Out</b>
-              </Button>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <div class="navbar-wrapper">
+          <Navbar bg="transparent" expand="lg">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <a class="navbar-brand" href="/"> <img id="logo" alt="Logo" src={logo} width="200"></img></a>
+                <Nav.Link as={Link} to="/">Home</Nav.Link>
+                <Nav.Link as={Link} to="/user">Profile</Nav.Link>
+              </Nav>
+              <Nav className="ml-auto">
+                <Button size="sm" onClick={() => this.onLoggedOut()}>
+                  <b>Log Out</b>
+                </Button>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
+        </div>
         <div className="main-view">
           <Route exact path="/" render={() => {
             if (!user) return <LoginView onLoggedIn={user =>
