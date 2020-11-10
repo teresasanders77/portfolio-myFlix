@@ -98,9 +98,9 @@ class MainView extends React.Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <a class="navbar-brand" href="/"> <img id="logo" alt="Logo" src={logo} width="200"></img></a>
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link as={Link} to="/user">Profile</Nav.Link>
+                <a class="navbar-brand" href="/"> <img id="logo" alt="Logo" src={logo} width="200"></img></a>
               </Nav>
               <Nav className="ml-auto">
                 <Button size="sm" onClick={() => this.onLoggedOut()}>
