@@ -50,9 +50,49 @@ h2 {
 .movie-view {
   flex: auto;
 }
+
+.nav-link {
+  color: #006eff !important;
+}
+
+.navbar-wrapper {
+  padding-right: 50px;
+}
+
+img {
+  position: absolute;
+  left: 48%;
+  margin-left: -50px !important;
+  display: block;
+}
+
+.main-view {
+  margin-top: 15%;
+  background: black;
+  width: 25em;
+  height: 25em;
+  position: absolute;
+  left: 41%;
+  margin-left: -50px !important;
+  display: block;
+}
+
+form {
+  max-width: 100%;
+}
 body {
-  background-color: #0e0e3d;
+  font-family: "Archivo", sans-serif;
+  min-height: 100%;
+  background-image: url(/mainView.d0378043.jpg) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   color: white;
+}
+
+img {
+  margin-left: 53em;
 }
 
 /*# sourceMappingURL=/src.78399e21.css.map */

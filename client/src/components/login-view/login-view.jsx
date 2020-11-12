@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
 import './login-view.scss';
 
