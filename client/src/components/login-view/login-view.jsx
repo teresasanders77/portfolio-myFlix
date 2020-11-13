@@ -5,8 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
-
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -41,8 +39,8 @@ export function LoginView(props) {
   };
 
   return (
-    <Container className='logContainer'>
-      <form>
+    <form class="login-form">
+      <div class="form-input-material">
         <Form.Group controlId='formBasicUsername'>
           <Form.Label>Username:</Form.Label>
           <Form.Control
@@ -64,19 +62,19 @@ export function LoginView(props) {
             placeholder='Enter Password'
           />
         </Form.Group>
-        <Button
-          type='submit'
-          color="blue"
-          rounded="true"
-          onClick={handleSubmit}>Login</Button>
+      </div>
+      <Button
+        type='submit'
+        className="loginButton"
+        onClick={handleSubmit}>Login</Button>
 
-        <Link to={`/register`}>
-          <Button variant="link" className="registerButton" type="link">
-            Not registered yet?
-           </Button>
-        </Link>
-      </form>
-    </Container>
+      <Link to={`/register`}>
+        <Button
+          variant="link"
+          className="registerButton"
+          type="link">Not registered yet?</Button>
+      </Link>
+    </form>
   );
 }
 
