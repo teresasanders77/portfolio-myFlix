@@ -100,7 +100,7 @@ class MainView extends React.Component {
               <Nav className="mr-auto">
                 <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link as={Link} to="/user">Profile</Nav.Link>
-                <a class="navbar-brand" href="/"> <img id="logo" alt="Logo" src={logo} width="200"></img></a>
+                <a class="navbar-brand mx-auto" href="/">myFlix</a>
               </Nav>
               <Nav className="ml-auto">
                 <Button size="sm" onClick={() => this.onLoggedOut()}>

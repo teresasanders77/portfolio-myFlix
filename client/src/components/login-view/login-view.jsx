@@ -40,6 +40,7 @@ export function LoginView(props) {
 
   return (
     <form class="login-form">
+      <h1>Login</h1>
       <div class="form-input-material">
         <Form.Group controlId='formBasicUsername'>
           <Form.Label>Username:</Form.Label>
@@ -65,7 +66,7 @@ export function LoginView(props) {
       </div>
       <Button
         type='submit'
-        className="loginButton"
+        class="btn btn-primary btn-ghost"
         onClick={handleSubmit}>Login</Button>
 
       <Link to={`/register`}>

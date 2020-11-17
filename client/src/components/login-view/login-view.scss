@@ -1,8 +1,4 @@
-.logContainer {
-  width: 30%;
-}
-
-.loginButton {
+.btn {
   padding: 8px 20px;
   border-radius: 0;
   overflow: hidden;
@@ -65,7 +61,7 @@
     margin: 12px 0;
   }
 
-  .loginButton {
+  .btn {
     width: 100%;
     margin: 18px 0 9px 0;
   }
@@ -73,4 +69,13 @@
 
 .registerButton {
   color: white;
+}
+
+.btn-link:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+.main-view {
+  margin-top: -100%;
 }

@@ -10,6 +10,12 @@
 padding-right: 50px;
 }
 
+.navbar-brand {
+  color: yellow !important;
+  margin-left: 88% !important; 
+  font-size: 9vw;
+}
+
 img {
   position: absolute;
     left: 48%;
@@ -18,7 +24,7 @@ img {
 }
 
 .main-view {
-  margin-top: 15%;
+  margin-top: 5%;
   background:
   black;
   width: 25em;
@@ -31,4 +37,8 @@ img {
 
 form {
   max-width: 100%;
+}
+
+a { 
+  float: left;
 }
