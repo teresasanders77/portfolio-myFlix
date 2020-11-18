@@ -70,6 +70,10 @@
   color: blue;
   text-decoration: none;
 }
+
+.ml-auto {
+  display: none;
+}
 .movie-card {
   display: flex;
   justify-content: center;
@@ -119,7 +123,7 @@ h2 {
 
 .navbar-brand {
   color: #8d8d0a !important;
-  margin-left: 70% !important;
+  margin-left: 52% !important;
   font-size: 9vw;
   animation: glow 1s ease-in-out infinite alternate;
 }
@@ -157,6 +161,10 @@ form {
 .navbar-brand {
   font-family: "Limelight", cursive;
 }
+
+.ml-auto {
+  margin-top: -11%;
+}
 body {
   font-family: "Archivo", sans-serif;
   min-height: 100%;
@@ -166,6 +174,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
   color: white;
+  overflow: hidden;
 }
 
 img {

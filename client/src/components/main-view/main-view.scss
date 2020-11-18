@@ -1,5 +1,5 @@
 .movie-view {
-  flex: auto
+  flex: auto;
 }
 
 .nav-link {
@@ -12,7 +12,7 @@ padding-right: 50px;
 
 .navbar-brand {
   color: rgb(141, 141, 10) !important;
-  margin-left: 70% !important; 
+  margin-left: 52% !important; 
   font-size: 9vw;
   animation: glow 1s ease-in-out infinite alternate;
 }
@@ -51,4 +51,8 @@ form {
 
 .navbar-brand { 
   font-family: 'Limelight', cursive;
+}
+
+.ml-auto {
+  margin-top: -11%;
 }

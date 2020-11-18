@@ -54364,19 +54364,25 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         id: "basic-navbar-nav"
       }, _react.default.createElement(_reactBootstrap.Nav, {
         className: "mr-auto"
-      }, _react.default.createElement(_reactBootstrap.Nav.Link, {
-        as: _reactRouterDom.Link,
+      }, _react.default.createElement(_reactRouterDom.Link, {
         to: "/"
-      }, "Home"), _react.default.createElement(_reactBootstrap.Nav.Link, {
-        as: _reactRouterDom.Link,
+      }, _react.default.createElement(_reactBootstrap.Button, {
+        variant: "link",
+        className: "registerButton",
+        type: "link"
+      }, "Home")), _react.default.createElement(_reactRouterDom.Link, {
         to: "/user"
-      }, "Profile"), _react.default.createElement("a", {
+      }, _react.default.createElement(_reactBootstrap.Button, {
+        variant: "link",
+        className: "registerButton",
+        type: "link"
+      }, "Profile")), _react.default.createElement("a", {
         "class": "navbar-brand mx-auto",
         href: "/"
       }, "myFlix")), _react.default.createElement(_reactBootstrap.Nav, {
         className: "ml-auto"
       }, _react.default.createElement(_reactBootstrap.Button, {
-        size: "sm",
+        size: "md",
         onClick: function onClick() {
           return _this3.onLoggedOut();
         }
