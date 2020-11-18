@@ -53305,7 +53305,7 @@ function RegistrationView(props) {
     className: "regContainer"
   }, _react.default.createElement(_Form.default, {
     className: "registrationForm"
-  }, _react.default.createElement(_Form.default.Group, {
+  }, _react.default.createElement("h1", null, "New User"), _react.default.createElement(_Form.default.Group, {
     controlid: "formBasicUsername"
   }, _react.default.createElement(_Form.default.Label, null, "Username:"), _react.default.createElement(_Form.default.Control, {
     type: "username",

@@ -44,6 +44,7 @@ export function RegistrationView(props) {
   return (
     <Container className='regContainer'>
       <Form className='registrationForm'>
+        <h1>New User</h1>
         <Form.Group controlid='formBasicUsername'>
           < Form.Label>Username:</Form.Label>
           <Form.Control
