@@ -54368,13 +54368,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         to: "/"
       }, _react.default.createElement(_reactBootstrap.Button, {
         variant: "link",
-        className: "registerButton",
+        className: "registerButton navbar-toggle collapsed",
         type: "link"
       }, "Home")), _react.default.createElement(_reactRouterDom.Link, {
         to: "/user"
       }, _react.default.createElement(_reactBootstrap.Button, {
         variant: "link",
-        className: "registerButton",
+        className: "registerButton navbar-toggle collapsed",
         type: "link"
       }, "Profile")), _react.default.createElement("a", {
         "class": "navbar-brand mx-auto",
@@ -54642,7 +54642,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52550" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63265" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

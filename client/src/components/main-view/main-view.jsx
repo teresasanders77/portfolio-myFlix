@@ -101,13 +101,13 @@ class MainView extends React.Component {
                 <Link to="/">
                   <Button
                     variant="link"
-                    className="registerButton"
+                    className="registerButton navbar-toggle collapsed"
                     type="link">Home</Button>
                 </Link>
                 <Link to="/user">
                   <Button
                     variant="link"
-                    className="registerButton"
+                    className="registerButton navbar-toggle collapsed"
                     type="link">Profile</Button>
                 </Link>
                 <a class="navbar-brand mx-auto" href="/">myFlix</a>

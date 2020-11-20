@@ -145,9 +145,10 @@ h2 {
 
 .navbar-brand {
   color: #8d8d0a !important;
-  margin-left: 52% !important;
+  margin-left: 56% !important;
   font-size: 9vw;
   animation: glow 1s ease-in-out infinite alternate;
+  font-family: "Limelight", cursive;
 }
 
 @keyframes glow {
@@ -165,28 +166,53 @@ img {
   display: block;
 }
 
-.main-view {
+/*.main-view {
   margin-top: 1%;
-  background: black;
-  width: 25em;
-  height: 25em;
+  background:
+  black;
   position: absolute;
-  left: 41%;
-  margin-left: -50px !important;
-  display: block;
-}
-
+    left: 41%;
+    margin-left: -50px !important; 
+    display: block;
+}*/
 form {
   max-width: 100%;
-}
-
-.navbar-brand {
-  font-family: "Limelight", cursive;
 }
 
 .ml-auto {
   margin-top: -11%;
   display: unset;
+}
+
+.main-view {
+  position: relative;
+  width: 22%;
+  padding: 25px 0;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-view {
+    width: 50%;
+    margin-top: 10%;
+  }
+
+  .navbar-brand {
+    margin-left: 30% !important;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .main-view {
+    width: 80%;
+    margin-top: 30%;
+  }
+
+  .navbar-brand {
+    margin-left: 30% !important;
+  }
 }
 body {
   font-family: "Archivo", sans-serif;
