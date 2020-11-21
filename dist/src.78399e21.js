@@ -54354,10 +54354,11 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       return _react.default.createElement(_reactRouterDom.BrowserRouter, {
         basename: "/client"
       }, _react.default.createElement("div", {
-        "class": "navbar-wrapper"
+        "class": "navbar-wrapper .navbar-light"
       }, _react.default.createElement(_reactBootstrap.Navbar, {
         bg: "transparent",
-        expand: "lg"
+        expand: "lg",
+        "class": "navbar-light"
       }, _react.default.createElement(_reactBootstrap.Navbar.Toggle, {
         "aria-controls": "basic-navbar-nav"
       }), _react.default.createElement(_reactBootstrap.Navbar.Collapse, {
@@ -54376,17 +54377,17 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         variant: "link",
         className: "registerButton navbar-toggle collapsed",
         type: "link"
-      }, "Profile")), _react.default.createElement("a", {
-        "class": "navbar-brand mx-auto",
-        href: "/"
-      }, "myFlix")), _react.default.createElement(_reactBootstrap.Nav, {
+      }, "Profile"))), _react.default.createElement(_reactBootstrap.Nav, {
         className: "ml-auto"
       }, _react.default.createElement(_reactBootstrap.Button, {
         size: "md",
         onClick: function onClick() {
           return _this3.onLoggedOut();
         }
-      }, _react.default.createElement("b", null, "Log Out")))))), _react.default.createElement("div", {
+      }, _react.default.createElement("b", null, "Log Out"))))), _react.default.createElement("a", {
+        "class": "navbar-brand mx-auto",
+        href: "/"
+      }, "myFlix")), _react.default.createElement("div", {
         className: "main-view"
       }, _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
@@ -54642,7 +54643,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63265" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59776" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

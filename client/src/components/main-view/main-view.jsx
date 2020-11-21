@@ -93,8 +93,8 @@ class MainView extends React.Component {
 
     return (
       <Router basename='/client'>
-        <div class="navbar-wrapper">
-          <Navbar bg="transparent" expand="lg">
+        <div class="navbar-wrapper .navbar-light">
+          <Navbar bg="transparent" expand="lg" class="navbar-light">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -110,7 +110,6 @@ class MainView extends React.Component {
                     className="registerButton navbar-toggle collapsed"
                     type="link">Profile</Button>
                 </Link>
-                <a class="navbar-brand mx-auto" href="/">myFlix</a>
               </Nav>
               <Nav className="ml-auto">
                 <Button size="md" onClick={() => this.onLoggedOut()}>
@@ -119,6 +118,7 @@ class MainView extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+          <a class="navbar-brand mx-auto" href="/">myFlix</a>
         </div>
         <div className="main-view">
           <Route exact path="/" render={() => {

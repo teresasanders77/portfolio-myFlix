@@ -12,7 +12,7 @@ padding-right: 50px;
 
 .navbar-brand {
   color: rgb(141, 141, 10) !important;
-  margin-left: 56% !important; 
+  margin-left: 35% !important; 
   font-size: 9vw;
   animation: glow 1s ease-in-out infinite alternate;
   font-family: 'Limelight', cursive;
@@ -34,16 +34,6 @@ img {
     display: block;
 }
 
-/*.main-view {
-  margin-top: 1%;
-  background:
-  black;
-  position: absolute;
-    left: 41%;
-    margin-left: -50px !important; 
-    display: block;
-}*/
-
 form {
   max-width: 100%;
 }
@@ -63,13 +53,17 @@ form {
   z-index: 1;
 }
 
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 110, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
 @media only screen and (max-width: 1200px) {
   .main-view {
     width: 50%;
     margin-top: 10%;
   }
   .navbar-brand {
-    margin-left: 30% !important;
+    margin-left: 3% !important;
   }
 
 }
@@ -79,6 +73,6 @@ form {
       margin-top: 30%;
     }
     .navbar-brand {
-      margin-left: 30% !important;
+      margin-left: 40% !important;
     }
 }
